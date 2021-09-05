@@ -23,20 +23,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Navbar user={this.state.user} setUser={this.setUser} />
-        {/* <Route
-          exact path='/projects'
-          component={Projects}
-        /> */}
-        {/* This route is now protected */}
-        {/* <Route
-          exact path='/projects'
-          // here we also use a render prop
-          render={props => {
-            if (this.state.user) return <Projects {...props} />
-            else return <Redirect to='/' />
-          }}
-        /> */}
+        <Navbar 
+          user={this.state.user} 
+          setUser={this.setUser} 
+        />
         <ProtectedRoute
           exact path='/projects'
           user={this.state.user}

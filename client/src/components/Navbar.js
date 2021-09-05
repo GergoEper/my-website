@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import Signup from './Signup';
-import Login from './Login';
+// import Signup from './Signup';
+// import Login from './Login';
 import { logout } from '../services/auth';
+import '../App.css';
+
 export default function navbar(props) {
    
 	const handleLogout = () => {
@@ -15,30 +17,32 @@ export default function navbar(props) {
 
 	return (
 		<nav>
-			<ul>
-				<li>
-					<Link to='/'>Home</Link>
-				</li>
-				{props.user ? (
-					<>
-						<li>
-							<Link to='/projects'>Projects</Link>
-						</li>
-						<li>
-							<Link to='/' onClick={() => handleLogout()}>Logout</Link>
-						</li>
-					</>
-				) : (
-					<>
-						<li>
-							<Link to='/signup'>Signup</Link>
-						</li>
-						<li>
-							<Link to='/login'>Login</Link>
-						</li>
-					</>
-				)}
-			</ul>
+			<div>
+				<ul>
+					<li>
+						<Link to='/'>Home</Link>
+					</li>
+					{props.user ? (
+						<>
+							<li>
+								<Link to='/projects'>Projects</Link>
+							</li>
+							<li>
+								<Link to='/' onClick={() => handleLogout()}>Logout</Link>
+							</li>
+						</>
+					) : (
+						<>
+							<li>
+								<Link to='/signup'>Signup</Link>
+							</li>
+							<li>
+								<Link to='/login'>Login</Link>
+							</li>
+						</>
+					)}
+				</ul>
+			</div>
 		</nav>
 	)
 }
