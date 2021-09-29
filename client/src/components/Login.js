@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { login } from '../services/auth';
+import '../App.css';
 
 export default class Login extends Component {
 
@@ -40,19 +41,23 @@ export default class Login extends Component {
 	render() {
 		return (
 			<>
-				<h2>Login</h2>
-				<form onSubmit={this.handleSubmit}>
-					<label htmlFor="username">Username: </label>
+				<div className={'login'}>
+					<h2>Login</h2>
+				</div>
+				<form className={'login-form'} onSubmit={this.handleSubmit}>
+					<label htmlFor="username"> </label>
 					<input
 						type="text"
 						name="username"
+						placeholder="username"
 						value={this.state.username}
 						onChange={this.handleChange}
 					/>
-					<label htmlFor="password">Password: </label>
+					<label htmlFor="password"> </label>
 					<input
 						type="password"
 						name="password"
+						placeholder="password"
 						value={this.state.password}
 						onChange={this.handleChange}
 					/>

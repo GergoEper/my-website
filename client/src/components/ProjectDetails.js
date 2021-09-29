@@ -8,6 +8,8 @@ export default class ProjectDetails extends Component {
 		project: null,
 		title: '',
 		description: '',
+		url: '',
+		github: '',
 		error: null,
 		editForm: false
 	}
@@ -21,6 +23,8 @@ export default class ProjectDetails extends Component {
 					project: response.data,
 					title: response.data.title,
 					description: response.data.description,
+					url: response.data.url,
+					github: response.data.github
 				})
 			})
 			.catch(err => {
@@ -63,16 +67,20 @@ export default class ProjectDetails extends Component {
 
 	handleSubmit = e => {
 		e.preventDefault();
-		const { title, description } = this.state;
+		const { title, description, url, github } = this.state;
 		axios.put(`/api/projects/${this.state.project._id}`, {
 			title,
-			description
+			description,
+			url,
+			github
 		})
 			.then(response => {
 				this.setState({
 					project: response.data,
 					title: response.data.title,
 					description: response.data.description,
+					url: response.data.url,
+					github: response.data.github,
 					editForm: false
 				})
 			})
@@ -82,12 +90,17 @@ export default class ProjectDetails extends Component {
 	render() {
 		if (this.state.error) return <h2>{this.state.error}</h2>
 		if (!this.state.project) return <></>
+		console.log(this.state)
 		return (
-			<>
-				<h1>Title: {this.state.project.title}</h1>
+			<div className={'project-details'}>
+				<h1>{this.state.project.title}</h1>
 				<p>Description: {this.state.project.description}</p>
-				<button onClick={this.deleteProject}>Delete this project 🗑</button>
-				<button onClick={this.toggleEditForm}>Show Edit form</button>
+				<p>Url: {this.state.project.url}</p>
+				<p>Github: {this.state.project.github}</p>
+				<div className={'project-details-btn'}>
+					<button onClick={this.deleteProject}>Delete this project 🗑</button>
+					<button onClick={this.toggleEditForm}>Show Edit form</button>
+				</div>
 				{this.state.editForm && (
 					<EditProject
 						// title={this.state.title}
@@ -97,7 +110,7 @@ export default class ProjectDetails extends Component {
 						handleChange={this.handleChange}
 					/>
 				)}
-			</>
+			</div>
 		)
 	}
 }

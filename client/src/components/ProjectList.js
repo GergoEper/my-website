@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function ProjectList(props) {
 	return (
-		<div>
+		<div className={'project-list'}>
 			{props.projects.length > 0 && <h2>Projects: </h2>}
 			{props.projects.map(project => {
 				return (

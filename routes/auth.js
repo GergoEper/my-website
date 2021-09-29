@@ -9,10 +9,10 @@ router.post('/signup', (req, res, next) => {
 	// is the password at least 8 chars
 	if (password.length < 8) {
 		// if not we show the signup form again with a message
-		return res.status(400).json({ message: 'Your password has to be 8 chars min' });
+		return res.status(400).json({ message: 'Your password has to be minimum 8 characters!' });
 	}
 	if (username === '') {
-		return res.status(400).json({ message: 'Your username cannot be empty' });
+		return res.status(400).json({ message: 'Your username cannot be empty!' });
 	}
 	// validation passed - password is long enough and the username is not empty
 	// check if the username already exists
@@ -20,7 +20,7 @@ router.post('/signup', (req, res, next) => {
 		.then(userFromDB => {
 			// if user exists -> we render signup again
 			if (userFromDB !== null) {
-				return res.status(400).json({ message: 'This username is already taken' });
+				return res.status(400).json({ message: 'This username is already taken!' });
 			} else {
 				// the username is available
 				// we create the hashed password

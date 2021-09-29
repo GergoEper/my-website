@@ -5,7 +5,9 @@ export default class AddProject extends Component {
 
 	state = {
 		title: '',
-		description: ''
+		description: '',
+		url: '',
+		github: ''
 	}
 
 	handleSubmit = event => {
@@ -13,12 +15,16 @@ export default class AddProject extends Component {
 		// make a post request to the server
 		axios.post('/api/projects', {
 			title: this.state.title,
-			description: this.state.description
+			description: this.state.description,
+			url: this.state.url,
+			github: this.state.github
 		})
 			.then(() => {
 				this.setState({
 					title: '',
-					description: ''
+					description: '',
+					url: '',
+					github: ''
 				})
 				// trigger getData() in Projects.js to retrieve the current list
 				// of projects from the server
@@ -34,24 +40,46 @@ export default class AddProject extends Component {
 	}
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
-				<label htmlFor="title">Title: </label>
-				<input
+			<form className={'add-project'} onSubmit={this.handleSubmit}>
+				<label htmlFor="title"> </label>
+				<input className={'add-project-label'}
+					placeholder='Title'
 					type="text"
 					id="title"
 					name="title"
 					value={this.state.title}
 					onChange={this.handleChange}
 				/>
-				<label htmlFor="description">Description: </label>
-				<input
+				<label htmlFor="description"> </label>
+				<input className={'add-project-label'}
+					placeholder='Description'
 					type="text"
 					id="description"
 					name="description"
 					value={this.state.description}
 					onChange={this.handleChange}
 				/>
-				<button type="submit">Add this project</button>
+				<label htmlFor="url"> </label>
+				<input className={'add-project-label'}
+					placeholder='URL'
+					type="text"
+					id="url"
+					name="url"
+					value={this.state.url}
+					onChange={this.handleChange}
+				/>
+				<label htmlFor="github"> </label>
+				<input className={'add-project-label'}
+					placeholder='Github'
+					type="text"
+					id="github"
+					name="github"
+					value={this.state.github}
+					onChange={this.handleChange}
+				/>
+				<div className={'add-project-btn'}>
+					<button type="submit">Add this project</button>
+				</div>
 			</form>
 		)
 	}

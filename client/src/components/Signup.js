@@ -43,15 +43,17 @@ export default class Signup extends Component {
 			<>
 				<h2>Signup</h2>
 				<form onSubmit={this.handleSubmit}>
-					<label htmlFor="username">Username: </label>
+					<label htmlFor="username"> </label>
 					<input
+						placeholder='Username'
 						type="text"
 						name="username"
 						value={this.state.username}
 						onChange={this.handleChange}
 					/>
-					<label htmlFor="password">Password: </label>
+					<label htmlFor="password"> </label>
 					<input
+						placeholder='Password'
 						type="password"
 						name="password"
 						value={this.state.password}

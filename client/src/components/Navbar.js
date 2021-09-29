@@ -16,13 +16,17 @@ export default function navbar(props) {
 	}
 
 	return (
-		<nav>
+		<nav className={'container'}>
 			<div>
 				<ul>
-					<li>
-						<Link to='/'>Home</Link>
-					</li>
+					<div>
+						<li>
+							<Link to='/'>Home</Link>
+						</li>
+					</div>
+					<div className={'links'}>
 					{props.user ? (
+						
 						<>
 							<li>
 								<Link to='/projects'>Projects</Link>
@@ -34,13 +38,16 @@ export default function navbar(props) {
 					) : (
 						<>
 							<li>
-								<Link to='/signup'>Signup</Link>
+								<Link to='/signup'>Sign up</Link>
 							</li>
 							<li>
 								<Link to='/login'>Login</Link>
 							</li>
+						
 						</>
+						
 					)}
+					</div>
 				</ul>
 			</div>
 		</nav>
