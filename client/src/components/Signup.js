@@ -6,6 +6,7 @@ export default class Signup extends Component {
 	state = {
 		username: '',
 		password: '',
+		password2: '',
 		message: ''
 	}
 
@@ -18,15 +19,16 @@ export default class Signup extends Component {
 
 	handleSubmit = e => {
 		e.preventDefault();
-		const { username, password } = this.state;
-		signup(username, password)
+		const { username, password, password2 } = this.state;
+		signup(username, password, password2)
 			.then(response => {
 				console.log(response);
 				if (response.message) {
 					this.setState({
 						message: response.message,
 						username: '',
-						password: ''
+						password: '',
+						password2: ''
 					})
 				} else {
 					// user is correctly signed up in the backend
@@ -57,6 +59,14 @@ export default class Signup extends Component {
 						type="password"
 						name="password"
 						value={this.state.password}
+						onChange={this.handleChange}
+					/>
+					<label htmlFor="password2"> </label>
+					<input
+						placeholder='Confirm your password'
+						type="password"
+						name="password2"
+						value={this.state.password2}
 						onChange={this.handleChange}
 					/>
 					<button type="submit">Signup</button>

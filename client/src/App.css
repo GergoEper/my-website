@@ -1,158 +1,144 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-
 body {
-  background: #1a1f35;
-  border: 0;
-  margin: 0;
-  padding: 0;
-  outline: none;
-  font-family: "Roboto", "Helvetica Neue", "Helvetica",  "Arial", sans-serif;
+	background: #1a1f35;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	outline: none;
+	font-family: “Roboto”, “Helvetica Neue”, “Helvetica”, “Arial”, sans-serif;
 }
-
-h1, h2, h3, p {
-  color: #FFFFFF;
+h1,
+h2,
+h3,
+p {
+	color: #ffffff;
 }
-
 .container {
-  padding: 0.2em 6em;
-  display: flex;
-  flex-direction: row;
-  /* justify-content: space-between; */
-  align-items: baseline;
-  /* position: fixed; */
-  width: 100%;
-  left: 0;
-  top: 0;
-  background-color: rgb(50, 54, 57);
+	padding: 0.2em 6em;
+	display: flex;
+	flex-direction: row;
+	/* justify-content: space-between; */
+	align-items: baseline;
+	/* position: fixed; */
+	width: 100%;
+	left: 0;
+	top: 0;
+	background-color: rgb(50, 54, 57);
 }
-
-  nav > div > ul {
-    display: flex;
-    align-items: baseline;
-  }
-
-    nav > div > ul > div > li{
-      display: flex;
-      font-size: 16px;
-      text-decoration: none;
-      list-style: none;
-      padding: 0 1em;
-      margin: 15px;
-      background-color: yellowgreen;
-      border-radius: 3px;
-      color: rgb(241, 241, 241);
-      cursor: pointer;
-    }
-
-    nav > div > ul > div > li:hover{
-      display: flex;
-      font-size: 16px;
-      text-decoration: none;
-      list-style: none;
-      padding: 0 1em;
-      margin: 15px;
-      background-color: rgb(58, 167, 58);
-      border-radius: 3px;
-      cursor: pointer;
-    }
-
+nav > div > ul {
+	display: flex;
+	align-items: baseline;
+}
+nav > div > ul > div > li {
+	display: flex;
+	font-size: 16px;
+	text-decoration: none;
+	list-style: none;
+	padding: 0 1em;
+	margin: 15px;
+	background-color: yellowgreen;
+	border-radius: 3px;
+	color: rgb(241, 241, 241);
+	cursor: pointer;
+}
+nav > div > ul > div > li:hover {
+	display: flex;
+	font-size: 16px;
+	text-decoration: none;
+	list-style: none;
+	padding: 0 1em;
+	margin: 15px;
+	background-color: rgb(58, 167, 58);
+	border-radius: 3px;
+	cursor: pointer;
+}
 .login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(70, 70, 146);
-  margin-top: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: rgb(70, 70, 146);
+	margin-top: 30px;
 }
-
 .login-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 50px;
 }
-
 .links {
-  display: flex;
-  align-items: end;
-  justify-content: end;
+	display: flex;
+	align-items: end;
+	justify-content: end;
 }
-
 .project-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 40px;
 }
-
 .project-details-btn {
-  display: flex;
-  flex-direction: column;
-  width: 20%;
+	display: flex;
+	flex-direction: column;
+	width: 20%;
 }
-
 .add-project {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 90px;
-  width: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 90px;
+	width: auto;
 }
-
 .add-project-label {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  margin-top: 12px;
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	margin-top: 12px;
 }
-
 .add-project-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 30px;
 }
-
 button {
-  display: inline-block;
-  padding: 0.35rem 1.2rem;
-  border: 0.1em solid #FFFFFF;
-  margin: 0 0.3em 0.3em 0;
-  border-radius: 0.12em;
-  box-sizing: border-box;
-  text-decoration:none;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #FFFFFF;
-  text-align: center;
-  transition: all 0.2s;
-  cursor: pointer;
-  background-color: transparent;
+	display: inline-block;
+	padding: 0.35rem 1.2rem;
+	border: 0.1em solid #ffffff;
+	margin: 0 0.3em 0.3em 0;
+	border-radius: 0.12em;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: ‘Roboto’, sans-serif;
+	font-weight: 300;
+	color: #ffffff;
+	text-align: center;
+	transition: all 0.2s;
+	cursor: pointer;
+	background-color: transparent;
 }
 button:hover {
-  color: #000000;
-  background-color: #FFFFFF;
+	color: #000000;
+	background-color: #ffffff;
 }
-@media all and (max-width:30em) {
-  button {
-    display: block;
-    margin: 0.4em auto
-  }
+@media all and (max-width: 30em) {
+	button {
+		display: block;
+		margin: 0.4em auto;
+	}
 }
-
 .project-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
 }
-
 .editproject-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 50px;
 }
